@@ -1392,7 +1392,7 @@
 											"height": 13,
 											"alpha": 1.1902890876138634,
 											"distance": 10.770329614269007,
-											"text": "2 : inputInfo()"
+											"text": "inputInfo()"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -1705,13 +1705,13 @@
 												"$ref": "AAAAAAGH+veGWzqlZZc="
 											},
 											"font": "Arial;13;0",
-											"left": 79.024169921875,
-											"top": 600,
+											"left": 567.024169921875,
+											"top": 288,
 											"width": 106.95166015625,
 											"height": 13,
-											"alpha": -2.5073098834803704,
-											"distance": 455.61935867563835,
-											"text": "3 : Message1"
+											"alpha": 0.3340955806389179,
+											"distance": 128.08200498118384,
+											"text": "Message1"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -1781,7 +1781,8 @@
 									"height": 38,
 									"text": "2.1 : showMainPage"
 								}
-							]
+							],
+							"sequenceNumbering": "custom"
 						}
 					],
 					"messages": [
@@ -1800,7 +1801,8 @@
 							},
 							"connector": {
 								"$ref": "AAAAAAGH+uiQcBVbh0E="
-							}
+							},
+							"sequenceNumber": "1"
 						},
 						{
 							"_type": "UMLMessage",
@@ -2007,7 +2009,8 @@
 								}
 							}
 						}
-					]
+					],
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -2044,7 +2047,8 @@
 								}
 							}
 						}
-					]
+					],
+					"type": ""
 				}
 			]
 		},
@@ -3319,13 +3323,13 @@
 												"$ref": "AAAAAAGH+v6nh4SecuM="
 											},
 											"font": "Arial;13;0",
-											"left": 39.477783203125,
-											"top": 928,
-											"width": 78.04443359375,
+											"left": 399.8310546875,
+											"top": 336,
+											"width": 163.337890625,
 											"height": 13,
-											"alpha": -2.1643676755269294,
-											"distance": 697.2689581502965,
-											"text": "3 : Message2"
+											"alpha": 0.8224178957098711,
+											"distance": 19.1049731745428,
+											"text": "2.1 : showLogOutDonePage"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -3381,21 +3385,9 @@
 									"propertyLabel": {
 										"$ref": "AAAAAAGH+v6nh4SiNAg="
 									}
-								},
-								{
-									"_type": "UMLTextView",
-									"_id": "AAAAAAGH+v9GfY5P1hc=",
-									"_parent": {
-										"$ref": "AAAAAAGH+vuTEXN2wDc="
-									},
-									"font": "Arial;13;0",
-									"left": 400,
-									"top": 328,
-									"width": 185,
-									"height": 38,
-									"text": "2.1 : showLogOutDonePage"
 								}
-							]
+							],
+							"sequenceNumbering": "custom"
 						}
 					],
 					"messages": [
@@ -3414,7 +3406,8 @@
 							},
 							"connector": {
 								"$ref": "AAAAAAGH+v2xSIDSNX0="
-							}
+							},
+							"sequenceNumber": "1"
 						},
 						{
 							"_type": "UMLMessage",
@@ -3431,7 +3424,8 @@
 							},
 							"connector": {
 								"$ref": "AAAAAAGH+v6eF4LavuA="
-							}
+							},
+							"sequenceNumber": "2"
 						},
 						{
 							"_type": "UMLMessage",
@@ -3439,7 +3433,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGH+vuTEXN193U="
 							},
-							"name": "Message2",
+							"name": "showLogOutDonePage",
 							"source": {
 								"$ref": "AAAAAAGH+vwkQ3djVEo="
 							},
@@ -3448,7 +3442,8 @@
 							},
 							"connector": {
 								"$ref": "AAAAAAGH+v6nhoSQYEI="
-							}
+							},
+							"sequenceNumber": "2.1"
 						}
 					],
 					"participants": [
@@ -3567,7 +3562,8 @@
 								}
 							}
 						}
-					]
+					],
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -3604,7 +3600,8 @@
 								}
 							}
 						}
-					]
+					],
+					"type": ""
 				}
 			]
 		},
@@ -3650,7 +3647,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 104.72998046875,
-											"top": 101,
+											"top": 85,
 											"width": 45.97998046875,
 											"height": 13,
 											"text": "회원탈퇴"
@@ -3663,7 +3660,7 @@
 											},
 											"font": "Arial;13;1",
 											"left": 85,
-											"top": 101,
+											"top": 85,
 											"width": 14.72998046875,
 											"height": 13,
 											"text": "sd"
@@ -3671,7 +3668,7 @@
 									],
 									"font": "Arial;13;0",
 									"left": 80,
-									"top": 96,
+									"top": 80,
 									"width": 785,
 									"height": 592,
 									"nameLabel": {
@@ -5115,13 +5112,13 @@
 												"$ref": "AAAAAAGH+wdKsr9wvoc="
 											},
 											"font": "Arial;13;0",
-											"left": 167.477783203125,
-											"top": 864,
-											"width": 78.04443359375,
+											"left": 463.36376953125,
+											"top": 344,
+											"width": 158.2724609375,
 											"height": 13,
-											"alpha": -2.1518577969593524,
-											"distance": 599.3680004805061,
-											"text": "3 : Message1"
+											"alpha": 1.217805475553431,
+											"distance": 20.248456731316587,
+											"text": "2.1 : showDeleteDonePage"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -5134,8 +5131,9 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 535.5,
+											"left": 510.20458984375,
 											"top": 338,
+											"width": 50.5908203125,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 25
@@ -5532,13 +5530,13 @@
 												"$ref": "AAAAAAGH+wkKWsXth/E="
 											},
 											"font": "Arial;13;0",
-											"left": 154.477783203125,
-											"top": 898,
-											"width": 78.04443359375,
+											"left": 655.426025390625,
+											"top": 440,
+											"width": 200.14794921875,
 											"height": 13,
-											"alpha": -2.3462500554721095,
-											"distance": 639.9632801966063,
-											"text": "4 : Message2"
+											"alpha": 0.008771704075034548,
+											"distance": 114.00438588054409,
+											"text": "2.1.1 : deleteAccountFromMember"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -5602,26 +5600,14 @@
 										"$ref": "AAAAAAGH+wAezZXWLk0="
 									},
 									"font": "Arial;13;0",
-									"left": 448,
-									"top": 336,
+									"left": 312,
+									"top": 168,
 									"width": 209,
 									"height": 38,
 									"text": "2.1 : showDeleteDonePage"
-								},
-								{
-									"_type": "UMLTextView",
-									"_id": "AAAAAAGH+wnVDN8Ow1U=",
-									"_parent": {
-										"$ref": "AAAAAAGH+wAezZXWLk0="
-									},
-									"font": "Arial;13;0",
-									"left": 656,
-									"top": 432,
-									"width": 170.39892578125,
-									"height": 38,
-									"text": "2.1.1 : deleteAccountFromMember"
 								}
-							]
+							],
+							"sequenceNumbering": "custom"
 						}
 					],
 					"messages": [
@@ -5640,7 +5626,8 @@
 							},
 							"connector": {
 								"$ref": "AAAAAAGH+wN/8Jc/KPI="
-							}
+							},
+							"sequenceNumber": "1"
 						},
 						{
 							"_type": "UMLMessage",
@@ -5657,7 +5644,8 @@
 							},
 							"connector": {
 								"$ref": "AAAAAAGH+wSsP5u9rdA="
-							}
+							},
+							"sequenceNumber": "2"
 						},
 						{
 							"_type": "UMLMessage",
@@ -5665,7 +5653,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGH+wAezZXV33Q="
 							},
-							"name": "Message1",
+							"name": "showDeleteDonePage",
 							"source": {
 								"$ref": "AAAAAAGH+wMR3ZcFOuY="
 							},
@@ -5674,7 +5662,8 @@
 							},
 							"connector": {
 								"$ref": "AAAAAAGH+wdKsb9iIs4="
-							}
+							},
+							"sequenceNumber": "2.1"
 						},
 						{
 							"_type": "UMLMessage",
@@ -5682,7 +5671,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGH+wAezZXV33Q="
 							},
-							"name": "Message2",
+							"name": "deleteAccountFromMember",
 							"source": {
 								"$ref": "AAAAAAGH+wMyjZciWeA="
 							},
@@ -5691,7 +5680,8 @@
 							},
 							"connector": {
 								"$ref": "AAAAAAGH+wkKWcXfEiY="
-							}
+							},
+							"sequenceNumber": "2.1.1"
 						}
 					],
 					"participants": [
@@ -5849,7 +5839,8 @@
 								}
 							}
 						}
-					]
+					],
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -5913,7 +5904,8 @@
 								}
 							}
 						}
-					]
+					],
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -5921,7 +5913,8 @@
 					"_parent": {
 						"$ref": "AAAAAAGH+wAezZXUoc4="
 					},
-					"name": "Role4"
+					"name": "Role4",
+					"type": ""
 				}
 			]
 		},
@@ -7597,7 +7590,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGH+zqJimAaakI="
 							},
-							"name": "ID"
+							"name": "ID",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7605,7 +7599,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGH+zqJimAaakI="
 							},
-							"name": "password"
+							"name": "password",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7613,7 +7608,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGH+zqJimAaakI="
 							},
-							"name": "memberName"
+							"name": "memberName",
+							"type": ""
 						}
 					],
 					"operations": [
