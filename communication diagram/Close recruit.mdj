@@ -431,7 +431,7 @@
 															"top": 415,
 															"width": 90,
 															"height": 13,
-															"text": ":Recruit"
+															"text": ":RecruitInfo"
 														},
 														{
 															"_type": "LabelView",
@@ -1701,13 +1701,13 @@
 														"$ref": "AAAAAAGH+8T0ZQHJ50A="
 													},
 													"font": "Arial;13;0",
-													"left": 345.56640625,
-													"top": 259,
-													"width": 101.8671875,
+													"left": 180.1649169921875,
+													"top": 256,
+													"width": 436.670166015625,
 													"height": 13,
-													"alpha": 1.5707963267948966,
-													"distance": 10,
-													"text": "3.1:closeRecruit()"
+													"alpha": 1.4181462469546315,
+													"distance": 13.152946437965905,
+													"text": "[numberOfPeople >= applyNum] : 3.1:closeRecruit()"
 												},
 												{
 													"_type": "NodeLabelView",
@@ -2155,7 +2155,8 @@
 									},
 									"connector": {
 										"$ref": "AAAAAAGH+8T0YAG7VfQ="
-									}
+									},
+									"guard": "numberOfPeople >= applyNum"
 								},
 								{
 									"_type": "UMLMessage",
@@ -2217,7 +2218,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGH+7KAYO2hLFY="
 									},
-									"name": ":Recruit",
+									"name": ":RecruitInfo",
 									"represent": {
 										"$ref": "AAAAAAGH+7ODSe4II+k="
 									},
