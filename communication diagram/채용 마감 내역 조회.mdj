@@ -235,9 +235,9 @@
 															"font": "Arial;13;1",
 															"left": 397,
 															"top": 247,
-															"width": 192.86083984375,
+															"width": 193.146484375,
 															"height": 13,
-															"text": ":EmploymentDeadlineInquiryUI"
+															"text": ":CheckRecruitDeadlineUI"
 														},
 														{
 															"_type": "LabelView",
@@ -268,7 +268,7 @@
 													"font": "Arial;13;0",
 													"left": 392,
 													"top": 240,
-													"width": 202.86083984375,
+													"width": 203.146484375,
 													"height": 25,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAGH+4qBwHjJy4k="
@@ -287,7 +287,7 @@
 											"font": "Arial;13;0",
 											"left": 392,
 											"top": 240,
-											"width": 202.86083984375,
+											"width": 203.146484375,
 											"height": 30,
 											"nameCompartment": {
 												"$ref": "AAAAAAGH+4qBv3jIL7Q="
@@ -336,7 +336,7 @@
 															"top": 247,
 															"width": 179.86083984375,
 															"height": 13,
-															"text": ":EmploymentDeadlineInquiry"
+															"text": ":CheckRecruitDeadline"
 														},
 														{
 															"_type": "LabelView",
@@ -886,13 +886,13 @@
 														"$ref": "AAAAAAGH+43vOXpqGUY="
 													},
 													"font": "Arial;13;0",
-													"left": 626.306884765625,
+													"left": 586.1484375,
 													"top": 227,
-													"width": 108.38623046875,
+													"width": 188.703125,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 10,
-													"text": "2: checkDeadline()"
+													"text": "2:  showRecruitDeadlines()"
 												},
 												{
 													"_type": "NodeLabelView",
@@ -1311,7 +1311,7 @@
 															"top": 415,
 															"width": 106.16455078125,
 															"height": 13,
-															"text": ":EmploymentInfo"
+															"text": ":RecruitIfo"
 														},
 														{
 															"_type": "LabelView",
@@ -1625,13 +1625,13 @@
 														"$ref": "AAAAAAGH+5njq4/sT/Y="
 													},
 													"font": "Arial;13;0",
-													"left": 881.581298828125,
+													"left": 876.401611328125,
 													"top": 325.5,
-													"width": 340.83740234375,
+													"width": 351.19677734375,
 													"height": 13,
 													"alpha": 0.027770635051401076,
 													"distance": 180.06943105369106,
-													"text": "2.1: *[For all employment info]: getEmploymentInfoDetails()"
+													"text": "2.1: *[For all recruit info]: getRecruitInfoDetails()"
 												},
 												{
 													"_type": "NodeLabelView",
@@ -1700,7 +1700,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGH+4ntXXiUs8c="
 									},
-									"name": "2: checkDeadline()",
+									"name": "2:  showRecruitDeadlines()",
 									"source": {
 										"$ref": "AAAAAAGH+4qBv3jGfXA="
 									},
@@ -1734,7 +1734,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGH+4ntXXiUs8c="
 									},
-									"name": "2.1: *[For all employment info]: getEmploymentInfoDetails()",
+									"name": "2.1: *[For all recruit info]: getRecruitInfoDetails()",
 									"source": {
 										"$ref": "AAAAAAGH+4x5Injk9sE="
 									},
@@ -1764,7 +1764,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGH+4ntXXiUs8c="
 									},
-									"name": ":EmploymentDeadlineInquiryUI",
+									"name": ":CheckRecruitDeadlineUI",
 									"represent": {
 										"$ref": "AAAAAAGH+4qBv3jFSCo="
 									},
@@ -1776,7 +1776,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGH+4ntXXiUs8c="
 									},
-									"name": ":EmploymentDeadlineInquiry",
+									"name": ":CheckRecruitDeadline",
 									"represent": {
 										"$ref": "AAAAAAGH+4x5IXjjxJw="
 									},
@@ -1788,7 +1788,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGH+4ntXXiUs8c="
 									},
-									"name": ":EmploymentInfo",
+									"name": ":RecruitIfo",
 									"represent": {
 										"$ref": "AAAAAAGH+5byu4JSXKo="
 									},
