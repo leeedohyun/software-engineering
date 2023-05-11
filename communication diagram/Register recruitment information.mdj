@@ -1376,13 +1376,13 @@
 														"$ref": "AAAAAAGH+3ol5qdvLws="
 													},
 													"font": "Arial;13;0",
-													"left": 483.819580078125,
+													"left": 472.977783203125,
 													"top": 330,
-													"width": 82.36083984375,
+													"width": 104.04443359375,
 													"height": 13,
 													"alpha": 0.119903971056827,
 													"distance": 83.60023923410746,
-													"text": "2.1.1:Recruit()"
+													"text": "2.1.1:RecruitInfo()"
 												},
 												{
 													"_type": "NodeLabelView",
@@ -1838,7 +1838,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGH+uuRA4NfwK4="
 									},
-									"name": "2.1.1:Recruit()",
+									"name": "2.1.1:RecruitInfo()",
 									"source": {
 										"$ref": "AAAAAAGH+3cAs5/qbFQ="
 									},
