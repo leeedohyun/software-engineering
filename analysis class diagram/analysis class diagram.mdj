@@ -220,7 +220,7 @@
 											"top": 471,
 											"width": 139.8134765625,
 											"height": 13,
-											"text": "+getRecruit()",
+											"text": "+getRecruitName()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -237,7 +237,7 @@
 											"top": 486,
 											"width": 139.8134765625,
 											"height": 13,
-											"text": "+getRecruitDetails()",
+											"text": "+getRecruitInfo()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -254,7 +254,7 @@
 											"top": 501,
 											"width": 139.8134765625,
 											"height": 13,
-											"text": "+changeRecruitDetails()",
+											"text": "+changeRecruitInfo()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1336,7 +1336,7 @@
 											"top": 235,
 											"width": 111.7568359375,
 											"height": 13,
-											"text": "+writeNewDetails()",
+											"text": "+writeNewInfo()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1532,7 +1532,7 @@
 											"top": 205,
 											"width": 127.5244140625,
 											"height": 13,
-											"text": "+showRecruitDetails()",
+											"text": "+showRecruitInfo()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1566,7 +1566,7 @@
 											"top": 235,
 											"width": 127.5244140625,
 											"height": 13,
-											"text": "+changeDetails()",
+											"text": "+changeInfo()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1690,7 +1690,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGH+8c1tlGK4Ig="
 							},
-							"name": "getRecruit"
+							"name": "getRecruitName"
 						},
 						{
 							"_type": "UMLOperation",
@@ -1698,7 +1698,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGH+8c1tlGK4Ig="
 							},
-							"name": "getRecruitDetails"
+							"name": "getRecruitInfo"
 						},
 						{
 							"_type": "UMLOperation",
@@ -1706,7 +1706,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGH+8c1tlGK4Ig="
 							},
-							"name": "changeRecruitDetails"
+							"name": "changeRecruitInfo"
 						},
 						{
 							"_type": "UMLOperation",
@@ -1849,7 +1849,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGH++JwflLcd0M="
 							},
-							"name": "writeNewDetails"
+							"name": "writeNewInfo"
 						}
 					]
 				},
@@ -1868,7 +1868,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGH++LtFFMG9ZQ="
 							},
-							"name": "showRecruitDetails"
+							"name": "showRecruitInfo"
 						},
 						{
 							"_type": "UMLOperation",
@@ -1884,7 +1884,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGH++LtFFMG9ZQ="
 							},
-							"name": "changeDetails"
+							"name": "changeInfo"
 						}
 					]
 				}
