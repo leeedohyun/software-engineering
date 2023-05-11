@@ -1722,7 +1722,7 @@
 													"height": 13,
 													"alpha": 0.027617284356501216,
 													"distance": 181.06904760339356,
-													"text": "2.1.2 *[For the work recruit searched]: getRecruitInfoDetails()"
+													"text": "2.1.2 *[For the work recruit searched]: getRecruitInfo()"
 												},
 												{
 													"_type": "NodeLabelView",
@@ -1842,7 +1842,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGH/5eV8UDiklQ="
 									},
-									"name": "2.1.2 *[For the work recruit searched]: getRecruitInfoDetails()",
+									"name": "2.1.2 *[For the work recruit searched]: getRecruitInfo()",
 									"source": {
 										"$ref": "AAAAAAGH/5jbLUdJmCc="
 									},
@@ -3709,7 +3709,7 @@
 											"height": 13,
 											"alpha": 0.005208285967811879,
 											"distance": 192.00260414900626,
-											"text": "2.1.2 *[For the company name searched]: getRecruitInfoDetails()"
+											"text": "2.1.2 *[For the company name searched]: getRecruitInfo()"
 										},
 										{
 											"_type": "NodeLabelView",
@@ -4131,7 +4131,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGH774u4MGYQHo="
 							},
-							"name": "2.1.2 *[For the company name searched]: getRecruitInfoDetails()",
+							"name": "2.1.2 *[For the company name searched]: getRecruitInfo()",
 							"source": {
 								"$ref": "AAAAAAGH78BZ+sHuYvw="
 							},

@@ -84,7 +84,7 @@
 											"font": "Arial;13;0",
 											"left": 192,
 											"top": 16,
-											"width": 1033,
+											"width": 985,
 											"height": 592,
 											"nameLabel": {
 												"$ref": "AAAAAAGH+4ntX3iXros="
@@ -892,7 +892,7 @@
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 10,
-													"text": "2:  showRecruitDeadlines()"
+													"text": "1:  showRecruitDeadlines()"
 												},
 												{
 													"_type": "NodeLabelView",
@@ -1211,7 +1211,7 @@
 													"height": 13,
 													"alpha": -1.57079566012823,
 													"distance": 15,
-													"text": "1: startInterface()"
+													"text": "2: startInterface()"
 												},
 												{
 													"_type": "NodeLabelView",
@@ -1625,13 +1625,13 @@
 														"$ref": "AAAAAAGH+5njq4/sT/Y="
 													},
 													"font": "Arial;13;0",
-													"left": 876.401611328125,
-													"top": 325.5,
+													"left": 847.401611328125,
+													"top": 327.5,
 													"width": 351.19677734375,
 													"height": 13,
-													"alpha": 0.027770635051401076,
-													"distance": 180.06943105369106,
-													"text": "2.1: *[For all recruit info]: getRecruitInfoDetails()"
+													"alpha": 0.01986493493595243,
+													"distance": 151.02979838429235,
+													"text": "1.1: *[For all deadline recruit info]: getRecruitInfo()"
 												},
 												{
 													"_type": "NodeLabelView",
@@ -1700,7 +1700,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGH+4ntXXiUs8c="
 									},
-									"name": "2:  showRecruitDeadlines()",
+									"name": "1:  showRecruitDeadlines()",
 									"source": {
 										"$ref": "AAAAAAGH+4qBv3jGfXA="
 									},
@@ -1717,7 +1717,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGH+4ntXXiUs8c="
 									},
-									"name": "1: startInterface()",
+									"name": "2: startInterface()",
 									"source": {
 										"$ref": "AAAAAAGH+4x5Injk9sE="
 									},
@@ -1734,7 +1734,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGH+4ntXXiUs8c="
 									},
-									"name": "2.1: *[For all recruit info]: getRecruitInfoDetails()",
+									"name": "1.1: *[For all deadline recruit info]: getRecruitInfo()",
 									"source": {
 										"$ref": "AAAAAAGH+4x5Injk9sE="
 									},
@@ -1984,6 +1984,15 @@
 								"$ref": "AAAAAAGH+4ntW3iTAk8="
 							},
 							"name": "Role5",
+							"type": ""
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGIClo86cpnhFM=",
+							"_parent": {
+								"$ref": "AAAAAAGH+4ntW3iTAk8="
+							},
+							"name": "Role6",
 							"type": ""
 						}
 					]
