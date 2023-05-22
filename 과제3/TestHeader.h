@@ -26,6 +26,7 @@ public:
 class LogIn
 {
 private:
+    LogInUI* logInUI;
 Member* member;
 public:
     LogIn();

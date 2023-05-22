@@ -25,7 +25,7 @@ bool Member::isInfoValid(string id, string pw)
             return true;
         }
     }
-    return true;
+    return false;
 }
 
 string Member::getID()
