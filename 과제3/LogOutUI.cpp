@@ -1,11 +1,14 @@
 #include <iostream>
+#include <fstream>
 #include "TestHeader.h"
 
 using namespace std;
+extern fstream in_fp;
+extern ofstream out_fp;
 
 void LogOutUI::startInterface()
 {
-    cout << "2.2. 로그아웃" << "> ";
+    out_fp << "2.2. 로그아웃" << "> ";
     proceedToLogOut();
 
 }

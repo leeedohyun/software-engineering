@@ -15,7 +15,6 @@ static Member* currentMember;
 int main()
 {
     
-    int menu_level_1, menu_level_2 = 0;
     in_fp.open(INPUT_FILE_NAME, ios::in);
     out_fp.open(OUTPUT_FILE_NAME, ios::out);
 
@@ -33,6 +32,7 @@ int main()
             char arr[256];
             in_fp.getline(arr, 256);
 
+            int menu_level_1, menu_level_2 = 0; 
             in_fp >> menu_level_1;
             in_fp >> menu_level_2;
 
@@ -43,7 +43,7 @@ int main()
                     switch (menu_level_2)
                     {
                         case 1:
-
+                            out_fp << "1.1. 회원가입" << endl;
                             break;
                         case 2:
                             DeleteAccountUI* deleteAccountUI = new DeleteAccountUI();
@@ -53,24 +53,45 @@ int main()
                     break;
                 case 2:
                     switch (menu_level_2)
-                        {
-                            case 1:
-                                LogInUI* logInUI = new LogInUI();
-                                logInUI->startInterface();
-                                break;
-                            case 2:
-                                LogOutUI* logOutUI = new LogOutUI();
-                                logOutUI->startInterface();
-                                break;
-                        }
+                    {   
+                        case 1:
+                            LogInUI* logInUI = new LogInUI();
+                            logInUI->startInterface();
+                            break;
+                        case 2:
+                            out_fp << "2.2.\n";
+                            break;
+                    }
                     break;
                 case 3:
+                    switch (menu_level_2)
+                    {
+                        case 1:
+                            out_fp << "3.1.\n";
+                            break;
+                        case 2:
+                            out_fp << "3.2.\n";
+                            break;
+                    }
                     break;
                 case 4:
+                    switch (menu_level_2)
+                    {
+                        case 1:
+                            out_fp << "4.1.\n";
+                            break;
+                        case 2:
+                            out_fp << "2.1.\n";
+                            break;
+                    }
                     break;
                 case 5:
+                    out_fp << "5.1.\n";
                     break;
                 case 6:
+                    out_fp << "6.1.\n";
+                    break;
+                default:
                     break;
             }
             cout << menu_level_1 << " " << menu_level_2 << endl;

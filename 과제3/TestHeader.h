@@ -10,8 +10,8 @@ private:
     string ID;
     string password;
     int memberType;
-    string name = "default";
-
+    string name = " ";
+    
 public:
     Member(string ID, string password);
     Member(string ID, string password, int memberType);
@@ -19,6 +19,7 @@ public:
     void deleteMember();
     bool isInfoValid(string id, string pw);
     string getID();
+    string getPassword();
 };
 
 
