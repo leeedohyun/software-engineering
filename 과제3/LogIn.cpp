@@ -5,11 +5,13 @@ using namespace std;
 
 bool LogIn::makeLogInInfo(string id, string pw)
 {
+    extern Member* currentMember;
     member = new Member(id, pw);
 
     switch (member->isInfoValid(id, pw))
     {
     case true:
+        currentMember = member;
         break;
     
     case false:

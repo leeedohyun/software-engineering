@@ -10,3 +10,8 @@ bool Member::isInfoValid(string id, string pw)
 {
     return true;
 }
+
+string Member::getID()
+{
+    return ID;
+}

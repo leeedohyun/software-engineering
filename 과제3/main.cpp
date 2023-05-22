@@ -2,36 +2,45 @@
 #include <fstream>
 #include <vector>
 #include "TestHeader.h"
+#define INPUT_FILE_NAME "input.txt"
+#define OUTPUT_FILE_NAME "output.txt"
 
 using namespace std;
 
+ifstream in_fp;
+ofstream out_fp;
+static vector<Member*> memberList;
+static Member* currentMember;
+
 int main()
 {
-    ifstream readFile;
-    int menu1, menu2, menu3 = 0;
-    readFile.open("input.txt");
+    
+    int menu_level_1, menu_level_2 = 0;
+    in_fp.open(INPUT_FILE_NAME, ios::in);
+    out_fp.open(OUTPUT_FILE_NAME, ios::out);
 
 
-    static vector<Member*> memberList;
-    static Member* currentMember;
+    if (!in_fp.is_open()) {
+        cerr << "Could not open the file - '" << INPUT_FILE_NAME << "'" << endl;
+        return EXIT_FAILURE;
+    }
 
-
-    if(readFile.is_open())
+    if(in_fp.is_open())
     {
         int num = 1;
-        while(!readFile.eof())
+        while(!in_fp.eof())
         {
             char arr[256];
-            readFile.getline(arr, 256);
+            in_fp.getline(arr, 256);
 
-            readFile >> menu1;
-            readFile >> menu2;
-            // readFile >> menu3;
+            in_fp >> menu_level_1;
+            in_fp >> menu_level_2;
 
-            switch (menu1)
+
+            switch (menu_level_1)
             {
                 case 1:
-                    switch (menu2)
+                    switch (menu_level_2)
                     {
                         case 1:
 
@@ -43,7 +52,7 @@ int main()
                     }
                     break;
                 case 2:
-                    switch (menu2)
+                    switch (menu_level_2)
                         {
                             case 1:
                                 LogInUI* logInUI = new LogInUI();
@@ -64,9 +73,12 @@ int main()
                 case 6:
                     break;
             }
-            cout << menu1 << " " << menu2 << endl;
+            cout << menu_level_1 << " " << menu_level_2 << endl;
         }
     }
 
+    in_fp.close();
+    out_fp.close();
+    
     return 0;
 }
