@@ -1,19 +1,20 @@
-#include "LogIn.h"
+#include "TestHeader.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
-
-void LogIn::showMainPage()
+bool LogIn::makeLogInInfo(string id, string pw)
 {
-    if( memberList->isInfoValid() )
-    {
-        cout << "로그인 되었습니다." << endl;
-        cout << "로그인 되었습니다." << endl;
+    member = new Member(id, pw);
 
-    }
-    else
+    switch (member->isInfoValid(id, pw))
     {
-        cout << "Invalid information!" << endl;
+    case true:
+        break;
+    
+    case false:
+        break;
     }
 
+    return member->isInfoValid(id, pw);
 }

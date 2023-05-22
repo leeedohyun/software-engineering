@@ -1,11 +1,13 @@
 #include <iostream>
-#include "LogOutUI.h"
+#include "TestHeader.h"
 
 using namespace std;
 
 void LogOutUI::startInterface()
 {
-    cout << "로그아웃 하시겠습니까?" << endl;
+    cout << "2.2. 로그아웃" << "> ";
+    proceedToLogOut();
+
 }
 
 void LogOutUI::proceedToLogOut()
