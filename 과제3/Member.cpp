@@ -1,4 +1,5 @@
-#include "TestHeader.h"
+#include "common.h"
+#include "Member.h"
 
 using namespace std;
 extern vector<Member*> memberList;

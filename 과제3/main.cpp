@@ -1,11 +1,10 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include "TestHeader.h"
+#include "common.h"
+#include "Member.h"
+#include "LogIn.h"
+#include "LogOut.h"
+#include "DeleteAccount.h"
 #define INPUT_FILE_NAME "input.txt"
 #define OUTPUT_FILE_NAME "output.txt"
-
-using namespace std;
 
 ifstream in_fp;
 ofstream out_fp;
@@ -34,8 +33,8 @@ void doTask()
                         out_fp << "1.1. 회원가입" << endl;
                         break;
                     case 2:
-                        DeleteAccountUI* deleteAccountUI = new DeleteAccountUI();
-                        deleteAccountUI->startInterface();                    
+                        DeleteAccount* deleteAccount = new DeleteAccount();
+                        deleteAccount->getUI()->startInterface();                    
                         break;
                 }
             }
@@ -44,12 +43,12 @@ void doTask()
                 switch (menu_level_2)
                 {
                     case 1:
-                        LogInUI* logInUI = new LogInUI();
-                        logInUI->startInterface();
+                        LogIn* logIn = new LogIn();
+                        logIn->getUI()->startInterface();
                         break;
                     case 2:
-                        LogOutUI* logOutUI = new LogOutUI();
-                        logOutUI->startInterface();
+                        LogOut* logOut = new LogOut();
+                        logOut->getUI()->startInterface();
                         break;
                 }
             }

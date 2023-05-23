@@ -1,11 +1,15 @@
-#include <iostream>
-#include "TestHeader.h"
-#include <fstream>
-extern ofstream out_fp;
+#include "common.h"
+#include "LogOut.h"
 
-using namespace std;
+
+extern ofstream out_fp;
 
 void LogOut::showLogOutDonePage()
 {
     out_fp << "로그아웃 되었습니다." << endl;
+}
+
+LogOutUI* LogOut::getUI()
+{
+    return logOutUI;
 }

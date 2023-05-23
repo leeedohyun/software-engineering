@@ -1,8 +1,7 @@
-#include <iostream>
-#include <fstream>
-#include "TestHeader.h"
+#include "common.h"
+#include "LogInUI.h"
 
-using namespace std;
+
 extern fstream in_fp;
 extern ofstream out_fp;
 

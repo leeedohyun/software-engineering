@@ -1,6 +1,5 @@
-#include "TestHeader.h"
-#include <iostream>
-#include <string>
+#include "common.h"
+#include "LogIn.h"
 using namespace std;
 
 bool LogIn::makeLogInInfo(string id, string pw)
@@ -18,4 +17,9 @@ bool LogIn::makeLogInInfo(string id, string pw)
         return false;
     }
 
+}
+
+LogInUI* LogIn::getUI()
+{
+    return logInUI;
 }

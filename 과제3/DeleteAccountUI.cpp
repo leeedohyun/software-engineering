@@ -1,8 +1,7 @@
-#include <fstream>
-#include <iostream>
-#include "TestHeader.h"
+#include "common.h"
+#include "deleteAccountUI.h"
 
-using namespace std;
+
 extern fstream in_fp;
 extern ofstream out_fp;
 
@@ -16,3 +15,4 @@ void DeleteAccountUI::proceedToDelete()
 {
     deleteAccount->showDeleteDonePage();
 }
+
