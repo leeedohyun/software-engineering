@@ -1,8 +1,11 @@
 #include <iostream>
 #include <fstream>
 
-#include "signup/SignUp.h"
-#include "signup/SignUpUI.h"
+#include "SignUp.h"
+#include "SignUpUI.h"
+#include "Member.h"
+#include "RecruitInfoSearchUI.h"
+#include "RecruitInfoSearch.h"
 
 #define INPUT_FILE_NAME "input.txt"
 #define OUTPUT_FILE_NAME "output.txt"
@@ -11,6 +14,7 @@ using namespace std;
 
 ifstream in_fp;
 ofstream out_fp;
+vector<Member*> members;
 
 void join()
 {
@@ -23,11 +27,30 @@ void join()
 
     in_fp >> memberType;
 
+    if (memberType == 1)
+    {
+        signUpUi->inputCompanyMemberInfo();
+    }
     if (memberType == 2)
     {
         signUpUi->inputGeneralMemberInfo();
     }
 };
+
+void search()
+{
+    RecruitInfoSearchUI* recruitInfoSearchUi = new RecruitInfoSearchUI();
+    RecruitInfoSearch *recruitInfoSearch = new RecruitInfoSearch();
+
+    recruitInfoSearch->start();
+    recruitInfoSearchUi->inputCompanyName();
+}
+
+void exit()
+{
+    cout << "6.1. ì¢…ë£Œ";
+    out_fp.write("6.1. ì¢…ë£Œ", 7);
+}
 
 void doTask()
 {
@@ -36,12 +59,12 @@ void doTask()
 
     while (is_program_exit == 0)
     {
-        // ÀÔ·ÂÆÄÀÏ¿¡¼­ ¸Ş´º ¼ıÀÚ 2°³¸¦ ÀĞ±â
+        // ì…ë ¥íŒŒì¼ì—ì„œ ë©”ë‰´ ìˆ«ì 2ê°œë¥¼ ì½ê¸°
         in_fp >> menu_level_1;
         in_fp >> menu_level_2;
 
-        // ¸Ş´º ±¸ºĞ ¹× ÇØ´ç ¿¬»ê ¼öÇà
-        // 1. È¸¿ø°¡ÀÔ & È¸¿øÅ»Åğ
+        // ë©”ë‰´ êµ¬ë¶„ ë° í•´ë‹¹ ì—°ì‚° ìˆ˜í–‰
+        // 1. íšŒì›ê°€ì… & íšŒì›íƒˆí‡´
         switch (menu_level_1)
         {
             case 1:
@@ -53,14 +76,22 @@ void doTask()
                         break;
                 }
             }
+            case 4:
+            {
+                switch (menu_level_2) {
+                    case 1:
+                        search();
+                        break;
+                }
+            }
         }
     }
 }
 
 int main()
 {
-    in_fp.open(INPUT_FILE_NAME, ios::in);
-    out_fp.open(OUTPUT_FILE_NAME, ios::out);
+    in_fp.open("C:\\input.txt", ios::in);
+    out_fp.open("C:\\output.txt", ios::out);
 
     if (!in_fp.is_open()) {
         cerr << "Could not open the file - '" << INPUT_FILE_NAME << "'" << endl;

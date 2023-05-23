@@ -1,4 +1,4 @@
-#include "../common.h"
+#include "common.h"
 #include "SignUp.h"
 
 #ifndef UNTITLED_SIGNUPUI_H
@@ -12,6 +12,7 @@ private:
 public:
     static void startInterface();
     void inputGeneralMemberInfo();
+    void inputCompanyMemberInfo();
 };
 
 

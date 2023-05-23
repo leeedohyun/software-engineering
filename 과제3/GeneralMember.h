@@ -1,5 +1,5 @@
 #include "Member.h"
-#include "../common.h"
+#include "common.h"
 
 #ifndef UNTITLED_GENERALMEMBER_H
 #define UNTITLED_GENERALMEMBER_H

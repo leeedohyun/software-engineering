@@ -1,5 +1,6 @@
 #include "GeneralMember.h"
 
+
 const int GENERAL_MEMBER_TYPE = 2;
 
 GeneralMember::GeneralMember(string name, string socialSecurityNumber,
