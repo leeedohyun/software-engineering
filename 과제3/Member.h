@@ -1,25 +1,28 @@
-#ifndef __MEMBER___
-#define __MEMBER___
-
 #include "common.h"
 
+#ifndef UNTITLED_MEMBER_H
+#define UNTITLED_MEMBER_H
 
-class Member
-{
+
+class Member {
 private:
-    string ID;
+    string id;
     string password;
-    int memberType;
     string name;
-    
+    int memberType;
+
 public:
-    Member(string ID, string password);
-    Member(string ID, string password, int memberType);
+    Member(string id, string password);
+    Member(string id, string password, int memberType);
     Member(string name, string id, string password, int memberType);
-    void deleteMember();
+    void createMember(Member* member);
     bool isInfoValid(string id, string pw);
-    string getID();
+    string getId();
+    void deleteMember();
     string getPassword();
+    int getMemberType();
+    string getName();
 };
 
-#endif
+
+#endif //UNTITLED_MEMBER_H

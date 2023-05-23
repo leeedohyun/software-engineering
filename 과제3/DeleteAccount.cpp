@@ -1,7 +1,12 @@
-#include "common.h"
 #include "DeleteAccount.h"
+#include "DeleteAccountUI.h"
 
 using namespace std;
+
+DeleteAccount::DeleteAccount()
+{
+    deleteAccountUI = new DeleteAccountUI(this);
+}
 
 void DeleteAccount::showDeleteDonePage()
 {

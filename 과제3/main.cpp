@@ -1,15 +1,82 @@
-#include "common.h"
+#include <iostream>
+#include <fstream>
+
+#include "SignUp.h"
+#include "SignUpUI.h"
 #include "Member.h"
+#include "RecruitInfoSearchUI.h"
+#include "RecruitInfoSearch.h"
+#include "DeleteAccount.h"
 #include "LogIn.h"
 #include "LogOut.h"
-#include "DeleteAccount.h"
+#include "LogInUI.h"
+#include "LogOutUI.h"
+#include "RegisterRecruit.h"
+#include "RegisterRecruitUI.h"
+
 #define INPUT_FILE_NAME "input.txt"
 #define OUTPUT_FILE_NAME "output.txt"
 
+using namespace std;
+
 ifstream in_fp;
 ofstream out_fp;
-static vector<Member*> memberList;
-static Member* currentMember;
+vector<Member*> members;
+Member* currentMember;
+
+void join()
+{
+    int memberType;
+
+    SignUpUI* signUpUi = new SignUpUI();
+    SignUp* signUp = new SignUp();
+
+    signUp->start();
+
+    in_fp >> memberType;
+
+    if (memberType == 1)
+    {
+        signUpUi->inputCompanyMemberInfo();
+    }
+    else if (memberType == 2)
+    {
+        signUpUi->inputGeneralMemberInfo();
+    }
+};
+
+void logIn()
+{
+    LogInUI* logInUi = new LogInUI();
+    LogIn* logIn = new LogIn();
+
+    logIn->getUI();
+    logInUi->insertInfo();
+}
+
+void logOut()
+{
+    LogOut* logOut = new LogOut();
+    LogOutUI* logOutUi = new LogOutUI();
+
+    logOut->getUI()->startInterface();
+    logOutUi->proceedToLogOut();
+}
+
+void search()
+{
+    RecruitInfoSearchUI* recruitInfoSearchUi = new RecruitInfoSearchUI();
+    RecruitInfoSearch *recruitInfoSearch = new RecruitInfoSearch();
+
+    recruitInfoSearch->start();
+    recruitInfoSearchUi->inputCompanyName();
+}
+
+void exit()
+{
+    cout << "6.1. 종료";
+    out_fp.write("6.1. 종료", 7);
+}
 
 void doTask()
 {
@@ -22,19 +89,49 @@ void doTask()
         in_fp >> menu_level_1;
         in_fp >> menu_level_2;
 
+
+        if (menu_level_1 == 1) {
+            if (menu_level_2 == 1) {
+                join();
+            } else if (menu_level_2 == 2) {
+                DeleteAccount* deleteAccount = new DeleteAccount();
+                DeleteAccountUI* deleteAccountUi = new DeleteAccountUI();
+
+                deleteAccount->getUI();
+                deleteAccountUi->proceedToDelete();
+            }
+        } else if (menu_level_1 == 2) {
+            if (menu_level_2 == 1) {
+                logIn();
+            } else if (menu_level_2 == 2) {
+                logOut();
+            }
+        } else if (menu_level_1 == 3) {
+            if (menu_level_2 == 1) {
+                RegisterRecruitUI *registerRecruitUi = new RegisterRecruitUI();
+                RegisterRecruit *registerRecruit = new RegisterRecruit();
+
+                registerRecruit->start();
+                registerRecruitUi->createNewRecruit();
+                is_program_exit = 1;
+            }
+        }
+
         // 메뉴 구분 및 해당 연산 수행
-        switch (menu_level_1)
+        // 1. 회원가입 & 회원탈퇴
+        /*switch (menu_level_1)
         {
             case 1:
             {
                 switch (menu_level_2)
                 {
                     case 1:
-                        out_fp << "1.1. 회원가입" << endl;
+                        join();
                         break;
+
                     case 2:
                         DeleteAccount* deleteAccount = new DeleteAccount();
-                        deleteAccount->getUI()->startInterface();                    
+                        deleteAccount->getUI()->startInterface();
                         break;
                 }
             }
@@ -43,77 +140,45 @@ void doTask()
                 switch (menu_level_2)
                 {
                     case 1:
-                        LogIn* logIn = new LogIn();
-                        logIn->getUI()->startInterface();
+                        logIn();
                         break;
                     case 2:
-                        LogOut* logOut = new LogOut();
-                        logOut->getUI()->startInterface();
+                        logOut();
                         break;
                 }
             }
             case 3:
             {
-                switch (menu_level_2)
-                {
+                switch (menu_level_2) {
                     case 1:
-                        out_fp << "3.1.\n";
-                        break;
-                    case 2:
-                        out_fp << "3.2.\n";
+                        search();
                         break;
                 }
-            }
-            case 4:
-            {
-                switch (menu_level_2)
-                {
+            }*/
+          /*  case 6:
+                switch (menu_level_2) {
                     case 1:
-                        out_fp << "4.1.\n";
+                        exit();
                         break;
-                    case 2:
-                        out_fp << "4.2.\n";
-                        break;
-                }
-            }
-            case 5:
-            {
-                out_fp << "5.1.\n";
-            }
-            case 6:
-            {
-                out_fp << "6.1.\n";
-                is_program_exit = 1;
-            }
-        }
+                }*/
+        //}
     }
 }
 
 int main()
 {
-    
-    in_fp.open(INPUT_FILE_NAME, ios::in);
-    out_fp.open(OUTPUT_FILE_NAME, ios::out);
-    int menu_level_1, menu_level_2;
+    in_fp.open("C:\\input.txt", ios::in);
+    out_fp.open("C:\\output.txt", ios::out);
 
     if (!in_fp.is_open()) {
         cerr << "Could not open the file - '" << INPUT_FILE_NAME << "'" << endl;
         return EXIT_FAILURE;
     }
 
-    while(!in_fp.eof())
-    {
-        char arr[256];
-        in_fp.getline(arr, 256);
+    doTask();
 
-         
-        in_fp >> menu_level_1;
-        in_fp >> menu_level_2;
-
-        doTask();
-    }
     in_fp.close();
     out_fp.close();
-    
+
     return 0;
 }

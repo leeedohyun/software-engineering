@@ -1,25 +1,24 @@
-#include "common.h"
 #include "LogIn.h"
-using namespace std;
+#include "LogInUI.h"
+
+extern vector<Member*> members;
+extern Member* currentMember;
 
 bool LogIn::makeLogInInfo(string id, string pw)
 {
-    extern Member* currentMember;
-    member = new Member(id, pw);
-
-    if (member->isInfoValid(id, pw))
+    for (int i = 0; i < members.size(); i++)
     {
-        currentMember = member;
-        return true;
+        if (members[i]->isInfoValid(id, pw))
+        {
+            currentMember = members[i];
+            return true;
+        }
     }
-    else
-    {
-        return false;
-    }
-
+    return false;
 }
 
-LogInUI* LogIn::getUI()
+void LogIn::getUI()
 {
-    return logInUI;
+    LogInUI* logInUi = new LogInUI();
+    logInUi->startInterface();
 }

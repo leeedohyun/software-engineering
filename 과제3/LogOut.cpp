@@ -1,12 +1,11 @@
-#include "common.h"
 #include "LogOut.h"
 
-
+extern Member* currentMember;
 extern ofstream out_fp;
 
-void LogOut::showLogOutDonePage()
+string LogOut::showLogOutDonePage()
 {
-    out_fp << "로그아웃 되었습니다." << endl;
+    return currentMember->getId();
 }
 
 LogOutUI* LogOut::getUI()

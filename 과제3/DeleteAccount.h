@@ -1,10 +1,8 @@
-#ifndef __DELETEACCOUNT___
-#define __DELETEACCOUNT___
-
+#pragma once
 #include "common.h"
 #include "Member.h"
-#include "DeleteAccountUI.h"
 
+class DeleteAccountUI;
 class DeleteAccount
 {
 private:
@@ -16,5 +14,3 @@ public:
     DeleteAccountUI* getUI();
 
 };
-
-#endif

@@ -1,14 +1,11 @@
 #include "common.h"
-#include "LogOut.h"
-#ifndef __LOGOUTUI___
-#define __LOGOUTUI___
+
+#ifndef UNTITLED_LOGOUTUI_H
+#define UNTITLED_LOGOUTUI_H
 
 class LogOutUI
 {
-private:
-    LogOut* logOut;
 public:
-    LogOutUI();
     void startInterface();
     void proceedToLogOut();
 };
