@@ -13,7 +13,6 @@ DeleteAccountUI::DeleteAccountUI(DeleteAccount* deleteAccount)
 void DeleteAccountUI::startInterface()
 {
    out_fp << "1.2. 회원탈퇴" << endl;
-    proceedToDelete();
 }
 
 void DeleteAccountUI::proceedToDelete()

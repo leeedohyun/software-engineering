@@ -97,7 +97,7 @@ void doTask()
                 DeleteAccount* deleteAccount = new DeleteAccount();
                 DeleteAccountUI* deleteAccountUi = new DeleteAccountUI();
 
-                deleteAccount->getUI();
+                deleteAccount->getUI()->startInterface();
                 deleteAccountUi->proceedToDelete();
             }
         } else if (menu_level_1 == 2) {
