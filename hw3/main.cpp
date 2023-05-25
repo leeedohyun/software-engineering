@@ -1,17 +1,94 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include "RecruitManagement.h"
-#include "RecruitManagement.cpp"
+#include "common.h"
+#include "SignUp.h"
+#include "Member.h"
+#include "SignUpUI.h"
+#include "RecruitInfoSearchUI.h"
+#include "RecruitInfoSearch.h"
+#include "DeleteAccount.h"
+#include "LogIn.h"
+#include "LogOut.h"
+#include "LogInUI.h"
+#include "LogOutUI.h"
+#include "RegisterRecruit.h"
+#include "RegisterRecruitUI.h"
+#include "GeneralMember.h"
+#include "CompanyMember.h"
+#include "SignUpUI.h"
+#include "SignUp.h"
+#include "CheckRecruit.h"
+#include "CheckRecruitUI.h"
+#include "RecruitInfoSearchUI.h"
+#include "RecruitInfoSearch.h"
+#include "ApplyUI.h"
+#include "Apply.h"
+#include "DeleteAccount.h"
+#include "CheckApplyUI.h"
+#include "StatisticsOfApplyUI.h"
+#include "StatisticsOfApply.h"
+
 #define INPUT_FILE_NAME "input.txt"
 #define OUTPUT_FILE_NAME "output.txt"
 
 using namespace std;
 
+ifstream in_fp;
+ofstream out_fp;
+vector<Member*> members;
+Member* currentMember;
 
-// vector<GeneralMember*> generalMembers;
-vector<CompanyMember*> companyMembers;
-static Member* currentMember;
+void join()
+{
+    int memberType;
+
+    SignUpUI* signUpUi = new SignUpUI();
+    SignUp* signUp = new SignUp();
+
+    signUp->start();
+
+    in_fp >> memberType;
+
+    if (memberType == 1)
+    {
+        signUpUi->inputCompanyMemberInfo();
+    }
+    else if (memberType == 2)
+    {
+        signUpUi->inputGeneralMemberInfo();
+    }
+}
+
+void logIn()
+{
+    LogInUI* logInUi = new LogInUI();
+    LogIn* logIn = new LogIn();
+
+    logIn->getUI();
+    logInUi->insertInfo();
+}
+
+void logOut()
+{
+    LogOut* logOut = new LogOut();
+    LogOutUI* logOutUi = new LogOutUI();
+
+    logOut->getUI()->startInterface();
+    logOutUi->proceedToLogOut();
+}
+
+void search()
+{
+    RecruitInfoSearchUI* recruitInfoSearchUi = new RecruitInfoSearchUI();
+    RecruitInfoSearch *recruitInfoSearch = new RecruitInfoSearch();
+
+    recruitInfoSearch->start();
+    recruitInfoSearchUi->inputCompanyName();
+}
+
+void exit()
+{
+    cout << "6.1. Ï¢ÖÎ£å";
+    out_fp.write("6.1. Ï¢ÖÎ£å", 7);
+}
 
 void doTask()
 {
@@ -20,109 +97,149 @@ void doTask()
 
     while (is_program_exit == 0)
     {
-        // ¿‘∑¬∆ƒ¿œø°º≠ ∏ﬁ¥∫ º˝¿⁄ 2∞≥∏¶ ¿–±‚
+        // ÏûÖÎ†•ÌååÏùºÏóêÏÑú Î©îÎâ¥ Ïà´Ïûê 2Í∞úÎ•º ÏùΩÍ∏∞
         in_fp >> menu_level_1;
         in_fp >> menu_level_2;
 
-        // ∏ﬁ¥∫ ±∏∫– π◊ «ÿ¥Á ø¨ªÍ ºˆ«‡
-        switch (menu_level_1)
-        {
-        case 1:
-        {
-            switch (menu_level_2)
-            {
-            case 1:
-                out_fp << "1.1. »∏ø¯∞°¿‘" << endl;
-                break;
-            case 2:
-                break;
+        // 1. ÌöåÏõêÍ∞ÄÏûÖ & ÌöåÏõêÌÉàÌá¥
+        if (menu_level_1 == 1) {
+            if (menu_level_2 == 1) {
+                join();
+            } else if (menu_level_2 == 2) {
+                DeleteAccount* deleteAccount = new DeleteAccount();
+                DeleteAccountUI* deleteAccountUi = new DeleteAccountUI();
+
+                deleteAccount->getUI();
+                deleteAccountUi->proceedToDelete();
             }
         }
-        case 2:
-        {
-            switch (menu_level_2)
-            {
-            case 1:
-                out_fp << "2.1. »∏ø¯∞°¿‘" << endl;
-                break;
-            case 2:
-                break;
+        // 2. Î°úÍ∑∏Ïù∏ & Î°úÍ∑∏ÏïÑÏõÉ
+        else if (menu_level_1 == 2) {
+            if (menu_level_2 == 1) {
+                logIn();
+            } else if (menu_level_2 == 2) {
+                logOut();
             }
         }
-        case 3:
-        {
-            switch (menu_level_2)
-            {
-            case 1:
-            {
+        // 3. Ï±ÑÏö© Ï†ïÎ≥¥ Îì±Î°ù & Îì±Î°ùÌïú Ï±ÑÏö© Ï†ïÎ≥¥ Ï°∞Ìöå
+        else if (menu_level_1 == 3) {
+            if (menu_level_2 == 1) {
                 if (currentMember->getMemberType() == 2) {
-                    out_fp << "¿œπ› »∏ø¯¿∫ √§øÎµÓ∑œ¿ª «“ ºˆ æ¯Ω¿¥œ¥Ÿ." << endl;
+                    out_fp << "Í∂åÌïúÏù¥ ÏóÜÏäµÎãàÎã§." << endl;
                 }
                 else {
-                    int memberSize = companyMembers.size();
-                    for (int i = 0; i < memberSize; i++)
+                    for (int i = 0; i < members.size(); i++)
                     {
-                        if (currentMember->getID() == companyMembers[i]->getID())
+                        if (currentMember->getId() == members[i]->getId())
                         {
-                            CompanyMember* companyMember = companyMembers[i];
+                            CompanyMember* companyMember = dynamic_cast<CompanyMember*>(currentMember);
                             RegisterRecruit* registerRecruit = new RegisterRecruit(companyMember);
-                            RegisterRecruitUI* registerRecruitUI = new RegisterRecruitUI(registerRecruit);
-                            registerRecruitUI->startInterface();
-                            break;
+                            RegisterRecruitUI *registerRecruitUI = new RegisterRecruitUI(registerRecruit);
+                            registerRecruit->start();
+                            registerRecruitUI->createNewRecruit();
                         }
                     }
                 }
-                break;
-            }
-            case 2:
-            {
-                int memberSize = companyMembers.size();
-                for (int i = 0; i < memberSize; i++)
+            } else if (menu_level_2 == 2) {
+                for (int i = 0; i < members.size(); i++)
                 {
-                    if (currentMember->getID() == companyMembers[i]->getID())
+                    if (currentMember->getId() == members[i]->getId())
                     {
-                        CompanyMember* companyMember = companyMembers[i];
+                        CompanyMember* companyMember = dynamic_cast<CompanyMember*>(members[i]);
                         CheckRecruit* checkRecruit = new CheckRecruit(companyMember);
                         CheckRecruitUI* checkRecruitUI = new CheckRecruitUI(checkRecruit);
                         checkRecruitUI->requestCheckRecruit();
-                        break;
                     }
                 }
-                break;
             }
+        } else if (menu_level_1 == 4) {
+            if (menu_level_2 == 1) {            // Ï±ÑÏö© Í≤ÄÏÉâ
+                search();
+            } else if (menu_level_2 == 2) {
+                ApplyUI *applyUi = new ApplyUI();
+                Apply *apply = new Apply();
+
+                apply->start();
+                applyUi->applyNewRecruitment();
+            } else if (menu_level_2 == 3) {
+                CheckApplyUI *checkApplyUi = new CheckApplyUI();
+                checkApplyUi->selectApplyInfo();
+            } else if (menu_level_2 == 4) {
+                CheckApplyUI* checkApplyUi = new CheckApplyUI();
+                checkApplyUi->selectOneApply();
+            }
+        } else if (menu_level_1 == 5) {
+            if (menu_level_2 == 1) {
+                StatisticsOfApplyUI* statisticsOfApplyUi = new StatisticsOfApplyUI();
+                StatisticsOfApply* statisticsOfApply = new StatisticsOfApply(statisticsOfApplyUi);
+
+                if (currentMember->getMemberType() == 2) {
+                    GeneralMember* generalMember = dynamic_cast<GeneralMember*>(currentMember);
+                    statisticsOfApplyUi->startInterface(statisticsOfApply->getDateOfApply(generalMember));
+                }
+                else if(currentMember->getMemberType() == 1){
+                    CompanyMember* companyMember = dynamic_cast<CompanyMember*>(currentMember);
+                    statisticsOfApplyUi->startInterface(statisticsOfApply->getNumberOfAppliedMember(companyMember));
+                }
+            }
+        } else if (menu_level_1 == 6) {
+            if (menu_level_1 == 1) {
+                exit();
             }
         }
-        case 4:
+
+        // Î©îÎâ¥ Íµ¨Î∂Ñ Î∞è Ìï¥Îãπ Ïó∞ÏÇ∞ ÏàòÌñâ
+        // 1. ÌöåÏõêÍ∞ÄÏûÖ & ÌöåÏõêÌÉàÌá¥
+        /*switch (menu_level_1)
         {
-            switch (menu_level_2)
-            {
             case 1:
-                out_fp << "4.1.\n";
-                break;
-            case 2:
-                out_fp << "4.2.\n";
-                break;
+            {
+                switch (menu_level_2)
+                {
+                    case 1:
+                        join();
+                        break;
+
+                    case 2:
+                        DeleteAccount* deleteAccount = new DeleteAccount();
+                        deleteAccount->getUI()->startInterface();
+                        break;
+                }
             }
-        }
-        case 5:
-        {
-            out_fp << "5.1.\n";
-        }
-        case 6:
-        {
-            out_fp << "6.1.\n";
-            is_program_exit = 1;
-        }
-        }
+            case 2:
+            {
+                switch (menu_level_2)
+                {
+                    case 1:
+                        logIn();
+                        break;
+                    case 2:
+                        logOut();
+                        break;
+                }
+            }
+            case 3:
+            {
+                switch (menu_level_2) {
+                    case 1:
+                        search();
+                        break;
+                }
+            }*/
+          /*  case 6:
+                switch (menu_level_2) {
+                    case 1:
+                        exit();
+                        break;
+                }*/
+        //}
     }
 }
 
 int main()
 {
-
-    in_fp.open(INPUT_FILE_NAME, ios::in);
-    out_fp.open(OUTPUT_FILE_NAME, ios::out);
-    //int menu_level_1, menu_level_2;
+    in_fp.open("C:\\input.txt", ios::in);
+    out_fp.open("C:\\output.txt", ios::out);
 
     if (!in_fp.is_open()) {
         cerr << "Could not open the file - '" << INPUT_FILE_NAME << "'" << endl;
